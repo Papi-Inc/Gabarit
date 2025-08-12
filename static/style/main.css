@@ -6,7 +6,7 @@
 }
 
 .navbar {
-    background: #ffffff;
+    background: #d0d0d0;
     height: 80px;
     display: flex;
     justify-content: center;
@@ -198,7 +198,7 @@
 /* hero section CSS */
 
 .main {
-    background-color: #ffffff;
+    background-color: #e8e8e8;
 }
 
 .main__container {
@@ -208,7 +208,7 @@
     justify-self: center;
     margin: 0 auto;
     height: 90vh;
-    background-color: #ffffff;
+    background-color: #e8e8e8;
     z-index: 1;
     width: 100%;
     max-width: 1300px;
@@ -350,7 +350,7 @@
 /* Services Section CSS */ 
 
 .services {
-    background: #ffffff;
+    background: #e8e8e8;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -542,7 +542,7 @@
 
 /* Footer Section */ 
 .footer__container {
-    background-color: #ffffff;
+    background-color: #e8e8e8;
     padding: 5rem 0;
     display: flex; 
     flex-direction: column;
