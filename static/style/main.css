@@ -682,6 +682,43 @@
     color: #000;
 }
 
+/* Contact page specific styles */
+.contact__hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+    justify-items: center;
+}
+
+.contact__content h1 {
+    font-size: 5rem;
+    margin-bottom: 1rem;
+}
+
+.contact__content h2 {
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+    .contact__content h1 {
+        font-size: 3rem;
+    }
+    
+    .contact__content h2 {
+        font-size: 2.5rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .contact__content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .contact__content h2 {
+        font-size: 2rem;
+    }
+}
+
 /* Work page specific styles */
 .work__section {
     background: #e8e8e8;
