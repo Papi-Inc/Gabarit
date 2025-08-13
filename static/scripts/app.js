@@ -9,6 +9,7 @@ menu.addEventListener('click', function() {
 document.addEventListener('DOMContentLoaded', () => {
   const boxes = document.querySelectorAll('.services__info-box');
   const heading = document.querySelector('.services h1');
+  const experienceImages = document.querySelectorAll('.experience__img');
 
   function isInViewport(el) {
     const rect = el.getBoundingClientRect();
@@ -28,6 +29,15 @@ document.addEventListener('DOMContentLoaded', () => {
     if (heading && isInViewport(heading)) {
       heading.classList.add('visible');
     }
+
+    experienceImages.forEach((img, index) => {
+      if (isInViewport(img)) {
+        // Add staggered delay for each image
+        setTimeout(() => {
+          img.classList.add('visible');
+        }, index * 200); // 200ms delay between each image
+      }
+    });
   }
 
   window.addEventListener('scroll', checkVisibility);
