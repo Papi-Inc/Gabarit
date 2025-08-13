@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const boxes = document.querySelectorAll('.services__info-box');
   const heading = document.querySelector('.services h1');
   const experienceImages = document.querySelectorAll('.experience__img');
+  const servicesCards = document.querySelectorAll('.services__card');
 
   function isInViewport(el) {
     const rect = el.getBoundingClientRect();
@@ -36,6 +37,15 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
           img.classList.add('visible');
         }, index * 200); // 200ms delay between each image
+      }
+    });
+
+    servicesCards.forEach((card, index) => {
+      if (isInViewport(card)) {
+        // Add staggered delay for each card
+        setTimeout(() => {
+          card.classList.add('visible');
+        }, index * 200); // 200ms delay between each card
       }
     });
   }
