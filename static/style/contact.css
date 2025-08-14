@@ -391,11 +391,18 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	padding: 1rem;
+	padding: 1.25rem;
 	border-radius: 4px;
-	background: #ffffff;
-	color: #000000;
-	text-align: center;
+    background: rgba(0, 0, 0, 0.55);
+    color: #ffffff;
+	text-align: left;
+	font-family: 'Tenorite', sans-serif;
+	line-height: 1.6;
+	font-size: 1rem;
+	max-width: 85%;
+	max-height: 85%;
+	margin: 0 auto;
+	overflow: auto;
 	opacity: 0;
 	transform: translateY(12px);
 	visibility: hidden;
@@ -405,17 +412,42 @@
 
 .services__card {
 	transition: background-color 300ms ease, color 300ms ease, box-shadow 300ms ease;
+	overflow: hidden;
+}
+
+/* Smooth image crossfade using a pseudo-element */
+.services__card::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background-image: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.6) 100%), url('/static/images/cover.jpg');
+	background-size: cover;
+	background-position: center;
+	opacity: 0;
+	transition: opacity 500ms ease-in-out;
+	pointer-events: none;
 }
 
 .services__card.active {
-	background-image: none;
-	background: #ffffff;
-	color: #000000;
+	color: #ffffff;
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.services__card.active::before {
+	opacity: 1;
 }
 
 .services__card.active h2,
 .services__card.active p {
     color: #000000;
+}
+
+.services__card.active h2,
+.services__card.active p,
+.services__card.active button {
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 200ms ease, visibility 0s linear 200ms;
 }
 
 .services__card.active .services__details {
