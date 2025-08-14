@@ -621,7 +621,7 @@
     border-radius: 6px;
 }
 
-/* Index page section backgrounds (dark theme like experience) */
+/* Index page hero background (revert to dark solid) */
 .main {
     background-color: #1f1f1f;
 }
@@ -635,7 +635,10 @@
 }
 
 .services {
-    background-color: #0f3d2e;
+    /* About US section uses cover image */
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.55) 100%), url('/static/images/mtl.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
 .services h1,
