@@ -620,3 +620,41 @@
     padding: 1rem 1.25rem;
     border-radius: 6px;
 }
+
+/* Index page section backgrounds (dark theme like experience) */
+.main {
+    background-color: #1f1f1f;
+}
+
+.main__container {
+    background-color: #1f1f1f;
+}
+
+.main__content p {
+    color: #ffffff;
+}
+
+.services {
+    background-color: #0f3d2e;
+}
+
+.services h1,
+.services p {
+    color: #ffffff;
+}
+
+.dna {
+    background-color: #0b3024;
+}
+
+.dna h2 {
+    color: #ffffff;
+}
+
+.mandats {
+    background-color: #111111;
+}
+
+.mandats h2 {
+    color: #ffffff;
+}
