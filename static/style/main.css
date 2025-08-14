@@ -357,19 +357,40 @@
 /* Services Section CSS */ 
 
 .services {
-    background: #dddddd;
+    background: transparent;
+}
+
+.services__two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 80vh;
+}
+
+.services__left {
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.55) 100%), url('/static/images/mtl.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.services__right {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    height: 100vh;
+    justify-content: center;
+    padding: 3rem 2rem;
+    background: #0f3d2e;
+}
+
+.services__right h1,
+.services__right p {
+    color: #ffffff;
 }
 
 
 .services h1 {
     color: #087d3d;
-    text-align: center;
+    text-align: left;
     font-size: 3rem;
-    margin: 2rem 0 1rem 0;
+    margin: 0 0 1rem 0;
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
@@ -377,7 +398,7 @@
 
 .services p {
     max-width: 900px;
-    text-align: center;
+    text-align: left;
     font-size: 1.25rem;
     line-height: 1.6;
 }
@@ -391,23 +412,17 @@
 
 
 @media screen and (max-width: 960px) {
-    .services {
-        height: 1600px;
+    .services__two-col {
+        grid-template-columns: 1fr;
     }
-
     .services h1 {
-        font-size: 2rem; 
-        margin-top: 2rem;
+        font-size: 2rem;
     }
 }
 
 @media screen and (max-width: 480px) {
-    .services {
-        height: 1400px;
-    }
-
-    .services h1 {
-        font-size: 1.2rem;
+    .services__right {
+        padding: 2rem 1.25rem;
     }
 }
 
@@ -647,7 +662,8 @@
 }
 
 .dna {
-    background-color: #0b3024;
+    background: transparent;
+    padding: 0;
 }
 
 .dna h2 {
@@ -660,4 +676,85 @@
 
 .mandats h2 {
     color: #ffffff;
+}
+
+/* DNA two-column layout */
+.dna__two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 70vh;
+    gap: 0;
+}
+
+.dna__left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.dna__right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.55) 100%), url('/static/images/pillars.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+}
+
+.dna__right h2 {
+    font-size: 3.5rem;
+    color: #ffffff;
+    margin: 0;
+}
+
+@media screen and (max-width: 960px) {
+    .dna__two-col {
+        grid-template-columns: 1fr;
+    }
+    .dna__right {
+        min-height: 40vh;
+    }
+    .dna__right h2 {
+        font-size: 3rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .dna__right h2 {
+        font-size: 2.25rem;
+    }
+}
+
+/* DNA info boxes: larger and in a 2x2 grid */
+.dna__left .services__info {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(260px, 1fr));
+    grid-template-rows: repeat(2, 200px);
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 720px;
+}
+
+.dna__left .services__info-box {
+    width: 100%;
+    height: 100%;
+}
+
+.dna__left .services__info-main-text {
+    font-size: 1.5rem;
+}
+
+.dna__left .services__info-hover {
+    font-size: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+    .dna__left .services__info {
+        grid-template-columns: 1fr;
+        grid-template-rows: none;
+    }
 }
