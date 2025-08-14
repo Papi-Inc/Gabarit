@@ -382,6 +382,55 @@
     cursor: pointer;
 }
 
+/* Reveal details when active */
+
+/* Smooth reveal overlay; starts hidden and slides up */
+.services__card .services__details {
+	position: absolute;
+	inset: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 1rem;
+	border-radius: 4px;
+	background: #ffffff;
+	color: #000000;
+	text-align: center;
+	opacity: 0;
+	transform: translateY(12px);
+	visibility: hidden;
+	pointer-events: none;
+	transition: opacity 300ms ease, transform 300ms ease, visibility 0s linear 300ms;
+}
+
+.services__card {
+	transition: background-color 300ms ease, color 300ms ease, box-shadow 300ms ease;
+}
+
+.services__card.active {
+	background-image: none;
+	background: #ffffff;
+	color: #000000;
+}
+
+.services__card.active h2,
+.services__card.active p {
+    color: #000000;
+}
+
+.services__card.active .services__details {
+	opacity: 1;
+	transform: translateY(0);
+	visibility: visible;
+	pointer-events: auto;
+	transition: opacity 300ms ease, transform 300ms ease, visibility 0s;
+}
+
+/* Allow clicking anywhere on the active card to close */
+.services__card.active {
+    cursor: pointer;
+}
+
 @media screen and (max-width: 960px) {
     .services {
         height: 1600px;

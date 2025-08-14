@@ -55,5 +55,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Initial check
   checkVisibility();
+
+  // Contact page: toggle services card details on button click
+  const contactCards = document.querySelectorAll('.services__card');
+  contactCards.forEach((card) => {
+    const toggleButton = card.querySelector('button');
+    const detailsOverlay = card.querySelector('.services__details');
+    if (toggleButton) {
+      toggleButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        card.classList.toggle('active');
+      });
+    }
+    if (detailsOverlay) {
+      // When active, clicking the overlay closes (returns to initial state)
+      detailsOverlay.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (card.classList.contains('active')) {
+          card.classList.remove('active');
+        }
+      });
+    }
+  });
 });
 
