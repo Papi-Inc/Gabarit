@@ -196,7 +196,7 @@
 /* hero section CSS */
 
 .main {
-    background-color: #e8e8e8;
+    background-color: #1f1f1f;
 }
 
 .main__container {
@@ -206,7 +206,7 @@
     justify-self: center;
     margin: 0 auto;
     height: 90vh;
-    background-color: #e8e8e8;
+    background-color: #1f1f1f;
     z-index: 1;
     width: 100%;
     max-width: 1300px;
@@ -215,8 +215,8 @@
 
 .main__content h1 {
     font-size: 4rem;
-    background-color: #2d5a2d;
-    background-image: linear-gradient(to top, #2d5a2d 0%, #3a7a3a 100%);
+    background-color: #91d5c1;
+    background-image: linear-gradient(to top, #91d5c1 0%, #a8e0d0 100%);
     background-size: 100%;
     background-clip: text;
     -webkit-background-clip: text;
@@ -227,8 +227,8 @@
 
 .main__content h2 {
     font-size: 3rem;
-    background-color: #3a7a3a;
-    background-image: linear-gradient(to top, #4a8a4a 0%, #5a9a5a 100%);
+    background-color: #a8e0d0;
+    background-image: linear-gradient(to top, #a8e0d0 0%, #b8e8d8 100%);
     background-size: 100%;
     background-clip: text;
     -webkit-background-clip: text;
@@ -307,7 +307,7 @@
 /* Services Section CSS */ 
 
 .services {
-    background: #e8e8e8;
+    background: #1f1f1f;
     display: flex;
     flex-direction: column;
     align-items: center;
