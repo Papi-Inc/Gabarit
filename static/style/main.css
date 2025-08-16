@@ -64,6 +64,8 @@
     padding: 0 1rem;
     height: 100%;
     font-family: 'Tenorite', sans-serif;
+    font-weight: 600;
+    font-size: 1.2rem;
 }
 
 .navbar__btn {
@@ -86,8 +88,10 @@
     outline:none; 
     border-radius: 4px;
     background: #91D5C1; 
-    color: #fff;
+    color: #ffffff;
     font-family: 'Tenorite', sans-serif;
+    font-weight: 600;
+    font-size: 1.2rem;
 
 }
 
