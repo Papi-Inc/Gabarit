@@ -9,6 +9,7 @@ menu.addEventListener('click', function() {
 document.addEventListener('DOMContentLoaded', () => {
   const boxes = document.querySelectorAll('.services__info-box');
   const heading = document.querySelector('.services h1');
+  const paragraph = document.querySelector('.services p');
   const experienceImages = document.querySelectorAll('.experience__img');
   const servicesCards = document.querySelectorAll('.services__card');
 
@@ -29,6 +30,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (heading && isInViewport(heading)) {
       heading.classList.add('visible');
+    }
+
+    if (paragraph && isInViewport(paragraph)) {
+      paragraph.classList.add('visible');
     }
 
     experienceImages.forEach((img, index) => {
