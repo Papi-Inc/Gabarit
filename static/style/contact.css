@@ -88,7 +88,7 @@
     outline:none; 
     border-radius: 4px;
     background: #91D5C1; 
-    color: #fff;
+    color: #1e3a5f;
     font-family: 'Tenorite', sans-serif;
     font-weight: 600;
     font-size: 1.2rem;
@@ -368,28 +368,52 @@
 
 .services h2 {
     position: absolute; 
-    top: 350px; 
-    left: 30px;
-}
-
-.services__card p {
-    position: absolute;
-    top: 400px;
+    top: 320px; 
     left: 30px;
 }
 
 .services__card button {
-    color: #fff;
+    color: #1e3a5f;
     padding: 10px 20px;
     border: none;
     outline: none;
     border-radius: 4px;
-    background: #f77062;
+    background: #91d5c1;
     position: absolute; 
-    top: 440px;
+    top: 370px;
     left: 30px; 
     font-size: 1rem;
     cursor: pointer;
+    font-family: 'Tenorite', sans-serif;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.services__card button:hover {
+    background-color: #5f8a7e;
+    transition: all 0.3s ease;
+}
+
+.services__card p {
+    position: absolute;
+    left: 30px;
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.4;
+    font-family: 'Tenorite', sans-serif;
+    font-weight: 600;
+}
+
+.services__card p:nth-of-type(1) {
+    top: 420px;
+}
+
+.services__card p:nth-of-type(2) {
+    top: 450px;
+}
+
+.services__card p:nth-of-type(3) {
+    top: 480px;
 }
 
 .services__card:hover {
