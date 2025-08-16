@@ -416,6 +416,18 @@
     top: 480px;
 }
 
+/* Email link styling */
+.services__card .email-link {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.services__card .email-link:hover {
+    color: #91d5c1;
+    text-decoration: underline;
+}
+
 .services__card:hover {
     transform: scale(1.075);
     transition: 0.2s ease-in-out;
