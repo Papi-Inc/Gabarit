@@ -334,13 +334,23 @@
     position: relative;
     color: #fff;
     opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    transform: translateY(-30px);
+    animation: fadeInDown 0.8s ease-out forwards;
 }
 
-.services__card.visible {
-    opacity: 1;
-    transform: translateY(0);
+.services__card:nth-child(1) {
+    animation-delay: 0.3s;
+}
+
+.services__card:nth-child(2) {
+    animation-delay: 0.6s;
+}
+
+@keyframes fadeInDown {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .services__card:nth-child(2) {

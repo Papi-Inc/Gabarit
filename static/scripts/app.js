@@ -45,14 +45,18 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    servicesCards.forEach((card, index) => {
-      if (isInViewport(card)) {
-        // Add staggered delay for each card
-        setTimeout(() => {
-          card.classList.add('visible');
-        }, index * 200); // 200ms delay between each card
-      }
-    });
+    // Note: Contact page services cards use CSS-only animation
+    // Only apply JavaScript animation to main page cards (DNA section)
+    if (window.location.pathname !== '/contact.html' && window.location.pathname !== '/contact') {
+      servicesCards.forEach((card, index) => {
+        if (isInViewport(card)) {
+          // Add staggered delay for each card
+          setTimeout(() => {
+            card.classList.add('visible');
+          }, index * 200); // 200ms delay between each card
+        }
+      });
+    }
   }
 
   window.addEventListener('scroll', checkVisibility);
