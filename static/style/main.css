@@ -387,6 +387,9 @@
 .services__right h1,
 .services__right p {
     color: #ffffff;
+    font-family: 'Tenorite', sans-serif;
+    font-weight: 600;
+    font-size: 1.2rem;
 }
 
 
