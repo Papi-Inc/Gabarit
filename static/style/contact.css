@@ -65,6 +65,7 @@
     height: 100%;
     font-weight: 600;
     font-size: 1.2rem;
+    font-family: 'Tenorite', sans-serif;
 }
 
 .navbar__btn {
@@ -88,6 +89,9 @@
     border-radius: 4px;
     background: #91D5C1; 
     color: #fff;
+    font-family: 'Tenorite', sans-serif;
+    font-weight: 600;
+    font-size: 1.2rem;
 
 }
 
