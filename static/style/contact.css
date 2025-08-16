@@ -368,7 +368,7 @@
 
 .services h2 {
     position: absolute; 
-    top: 320px; 
+    top: 290px; 
     left: 30px;
 }
 
@@ -380,7 +380,7 @@
     border-radius: 4px;
     background: #91d5c1;
     position: absolute; 
-    top: 370px;
+    top: 340px;
     left: 30px; 
     font-size: 1rem;
     cursor: pointer;
@@ -405,15 +405,15 @@
 }
 
 .services__card p:nth-of-type(1) {
-    top: 420px;
+    top: 390px;
 }
 
 .services__card p:nth-of-type(2) {
-    top: 450px;
+    top: 420px;
 }
 
 .services__card p:nth-of-type(3) {
-    top: 480px;
+    top: 450px;
 }
 
 /* Email link styling */
@@ -426,6 +426,26 @@
 .services__card .email-link:hover {
     color: #91d5c1;
     text-decoration: underline;
+}
+
+/* LinkedIn icon styling */
+.services__card .linkedin-container {
+    position: absolute;
+    top: 480px;
+    left: 30px;
+}
+
+.services__card .linkedin-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.services__card .linkedin-link:hover {
+    color: #0077b5;
+    transform: scale(1.1);
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .services__card:hover {
