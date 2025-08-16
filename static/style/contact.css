@@ -6,7 +6,7 @@
 }
 
 .navbar {
-    background: #d0d0d0;
+    background: #1a1a1a;
     height: 80px;
     display: flex;
     justify-content: center;
@@ -56,7 +56,7 @@
 }
 
 .navbar__links{
-    color: #000;
+    color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -122,11 +122,11 @@
         transition: all 0.5s ease; 
         height: 50vh;
         z-index: -1; 
-        background: #d0d0d0; 
+        background: #1a1a1a; 
     }
 
     .navbar__menu.active {
-        background: #d0d0d0; 
+        background: #1a1a1a; 
         top: 100%; 
         opacity: 1;
         transition: all 0.5s ease;
@@ -144,7 +144,7 @@
         height: 3px;
         margin: 5px auto; 
         transition: all 0.3s ease-in-out; 
-        background: #000000;
+        background: #ffffff;
     }
 
     .navbar__links {
