@@ -633,22 +633,160 @@
     color: #087d3d;
     text-align: center;
     font-size: 2.5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
 }
 
-.mandats__container {
-    max-width: 1000px;
-    margin: 0 auto;
+.mandats__three-col {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    min-height: 60vh;
+    gap: 0;
 }
 
-.mandats__item {
-    background: #ffffff;
-    border-left: 4px solid #2ab159;
-    padding: 1rem 1.25rem;
+.mandats__left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 3rem 2rem;
+    background-color: #2ab159;
+}
+
+.mandats__middle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 3rem 2rem;
+    background-color: #1a1a1a;
+}
+
+.mandats__right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 3rem 2rem;
+    background-color: #91d5c1;
+}
+
+.mandats__left h3,
+.mandats__middle h3,
+.mandats__right h3 {
+    color: #ffffff;
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-align: center;
+    margin: 0;
+}
+
+.mandats__middle h3 {
+    color: #ffffff;
+}
+
+.mandats__right h3 {
+    color: #1e3a5f;
+}
+
+/* Mandats info blocks */
+.mandats__info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    width: 100%;
+    max-width: 600px;
+    margin-top: 2rem;
+}
+
+
+
+.mandats__info-box {
+    background-color: #ffffff;
+    color: #2ab159;
+    width: 100%;
+    height: 80px;
     border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9rem;
+    font-weight: 600;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.3);
+    cursor: default;
+    user-select: none;
+    transition: transform 0.2s ease;
+}
+
+.mandats__info-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(255, 255, 255, 0.5);
+}
+
+.mandats__info-main-text {
+    text-align: center;
+    padding: 0.5rem;
+    line-height: 1.3;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* Middle section info blocks (buy-side) */
+.mandats__middle .mandats__info {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 400px;
+}
+
+.mandats__middle .mandats__info-box {
+    background-color: #ffffff;
+    color: #1a1a1a;
+}
+
+/* Right section info blocks (strategic advice) */
+.mandats__right .mandats__info {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 400px;
+}
+
+.mandats__right .mandats__info-box {
+    background-color: #ffffff;
+    color: #1e3a5f;
+}
+
+/* Responsive design for mandats sections */
+@media screen and (max-width: 960px) {
+    .mandats__three-col {
+        grid-template-columns: 1fr;
+    }
+    
+    .mandats__left,
+    .mandats__middle,
+    .mandats__right {
+        min-height: 30vh;
+    }
+    
+    .mandats__info {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 500px;
+    }
+    
+    .mandats__middle .mandats__info,
+    .mandats__right .mandats__info {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 400px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .mandats__info {
+        grid-template-columns: 1fr;
+        max-width: 300px;
+    }
+    
+    .mandats__middle .mandats__info,
+    .mandats__right .mandats__info {
+        grid-template-columns: 1fr;
+        max-width: 300px;
+    }
 }
 
 /* Index page hero background (revert to dark solid) */
