@@ -203,6 +203,8 @@
 
 .main {
     background-color: #1f1f1f;
+    position: relative;
+    z-index: 2;
 }
 
 .main__container {
@@ -314,10 +316,12 @@
 
 .services {
     background: #1f1f1f;
+    padding: 2rem 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
+    position: relative;
+    z-index: 1;
 }
 
 
@@ -536,14 +540,12 @@
 
 @media screen and (max-width: 768px) {
     .services {
-        height: auto;
-        min-height: 100vh;
         padding: 2rem 0;
     }
 
     .services h1 {
         font-size: 2rem; 
-        margin-top: 2rem;
+        margin-bottom: 2rem;
     }
 
     .services__container {
@@ -599,13 +601,12 @@
 
 @media screen and (max-width: 480px) {
     .services {
-        height: auto;
-        min-height: 100vh;
         padding: 1rem 0;
     }
 
     .services h1 {
         font-size: 1.5rem;
+        margin-bottom: 1.5rem;
     }
 
     .services__container {
@@ -711,37 +712,39 @@
 
 /* Hero section - compact height */
 .contact__hero {
-    height: 20vh !important;
+    height: 35vh !important;
     grid-template-columns: 1fr !important;
     text-align: center !important;
     justify-items: center !important;
+    position: relative;
+    z-index: 2;
 }
 
-/* Services section - compact height */
+/* Services section - responsive height */
 .contact.services {
-    height: 80vh !important;
     padding: 2rem 0;
+    position: relative;
+    z-index: 1;
+    margin-top: 0;
 }
 
 /* Mobile responsive adjustments */
 @media screen and (max-width: 768px) {
     .contact__hero {
-        height: 20vh !important;
+        height: 30vh !important;
     }
     
     .contact.services {
-        height: 80vh !important;
         padding: 2rem 0;
     }
 }
 
 @media screen and (max-width: 480px) {
     .contact__hero {
-        height: 20vh !important;
+        height: 25vh !important;
     }
     
     .contact.services {
-        height: 80vh !important;
-        padding: 2rem 0;
+        padding: 1rem 0;
     }
 }
