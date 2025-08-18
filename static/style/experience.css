@@ -200,37 +200,70 @@
 /* hero section CSS */
 
 .main {
-    background-color: #e8e8e8;
+    background: transparent;
 }
 
 .main__container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     align-items: center;
+    justify-items: center;
+    text-align: center;
     justify-self: center;
-    margin: 0 auto;
-    height: 90vh;
-    background-color: #e8e8e8;
+    margin: 0;
+    height: 75vh;
     z-index: 1;
-    width: 100%;
-    max-width: 1300px;
+    width: 100vw;
     padding: 0 50px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Crossfade layers for hero background (keeps gradient constant) */
+.main__container::before,
+.main__container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    z-index: 0;
+}
+
+/* Default visible layer */
+.main__container::before {
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.7) 100%), var(--bg-image-1, url('/static/images/meeting.jpg'));
+    opacity: 1;
+}
+
+/* Alternate layer */
+.main__container::after {
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.7) 100%), var(--bg-image-2, url('/static/images/engineering.jpg'));
+}
+
+/* When toggled, fade to the alternate layer */
+.main__container.show-alt::before { opacity: 0; }
+.main__container.show-alt::after  { opacity: 1; }
+
+/* Ensure text/content stays above fading layers */
+.main__content {
+    position: relative;
+    z-index: 1;
 }
 
 .main__content h1 {
-    font-size: 4rem;
-    background-color: #91d5c1;
-    background-image: linear-gradient(to top, #91d5c1 0%, #a8e0d0 100%);
-    background-size: 100%;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -moz-text-fill-color: transparent;
+    font-size: 3.5rem;
+    color: #ffffff;
 }
 
 .main__content h2 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     background-color: #a8e0d0;
     background-image: linear-gradient(to top, #a8e0d0 0%, #b8e8d8 100%);
     background-size: 100%;
@@ -245,7 +278,7 @@
     margin-top: 1rem; 
     font-size: 2rem;
     font-weight: 700;
-    color: #000
+    color: #ffffff;
 }
 
 

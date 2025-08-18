@@ -10,12 +10,25 @@ document.addEventListener('DOMContentLoaded', () => {
   // Hero section slideshow (crossfade between layered backgrounds)
   const mainContainer = document.querySelector('.main__container');
   if (mainContainer) {
-    const images = [
-      '/static/images/mtl_1.jpg',
-      '/static/images/mtl_2.jpg',
-      '/static/images/mtl_3.jpg',
-      '/static/images/mtl_4.jpg'
-    ];
+    // Different image sets for different pages
+    let images;
+    if (window.location.pathname === '/experience.html' || window.location.pathname === '/experience') {
+      // Experience page images
+      images = [
+        '/static/images/experience_1.jpg',
+        '/static/images/experience_2.jpg',
+        '/static/images/experience_3.jpg',
+        '/static/images/experience_4.jpg'
+      ];
+    } else {
+      // Home page images
+      images = [
+        '/static/images/mtl_1.jpg',
+        '/static/images/mtl_2.jpg',
+        '/static/images/mtl_3.jpg',
+        '/static/images/mtl_4.jpg'
+      ];
+    }
 
     // Preload images
     images.forEach((src) => { const img = new Image(); img.src = src; });
