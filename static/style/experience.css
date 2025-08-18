@@ -259,7 +259,13 @@
 
 .main__content h1 {
     font-size: 3.5rem;
-    color: #ffffff;
+    background-image: linear-gradient(to top, #91d5c1 0%, #a8e0d0 100%);
+    background-size: 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
 }
 
 .main__content h2 {
@@ -560,7 +566,7 @@
 }
 
 .work__section {
-    background-color: #0f3d2e;
+    background-color: #2ab167;
 }
 
 .work__section-title {
