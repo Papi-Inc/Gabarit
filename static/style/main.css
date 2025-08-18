@@ -132,7 +132,7 @@
     }
 
     .navbar__menu.active {
-        background: #404040; 
+        background: #1a1a1a; 
         top: 100%; 
         opacity: 1;
         transition: all 0.5s ease;
@@ -681,7 +681,7 @@
     align-items: center;
     justify-content: flex-start;
     padding: 3rem 2rem;
-    background-color: #2ab167;
+    background-color: #91d5c1;
 }
 
 .mandats__middle {
@@ -710,6 +710,10 @@
     font-weight: 600;
     text-align: center;
     margin: 0;
+}
+
+.mandats__left h3 {
+    color: #1e3a5f;
 }
 
 .mandats__middle h3 {
@@ -760,6 +764,12 @@
     line-height: 1.3;
     font-size: 0.9rem;
     font-weight: 600;
+}
+
+/* Left section info blocks (sell-side) */
+.mandats__left .mandats__info-box {
+    background-color: #ffffff;
+    color: #1e3a5f;
 }
 
 /* Middle section info blocks (buy-side) */
