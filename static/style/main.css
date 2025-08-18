@@ -240,13 +240,13 @@
 
 /* Default visible layer */
 .main__container::before {
-    background-image: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.7) 100%), var(--bg-image-1, url('/static/images/mtl_1.jpg'));
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.9) 100%), var(--bg-image-1, url('/static/images/mtl_1.jpg'));
     opacity: 1;
 }
 
 /* Alternate layer */
 .main__container::after {
-    background-image: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.7) 100%), var(--bg-image-2, url('/static/images/mtl_2.jpg'));
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.9) 100%), var(--bg-image-2, url('/static/images/mtl_2.jpg'));
 }
 
 /* When toggled, fade to the alternate layer */
