@@ -325,15 +325,18 @@
 
 
 .services__container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    width: 100%;
+    padding: 0 2rem;
+    margin: 0 auto;
 }
 
 .services__card {
-    margin: 1rem;
+    width: 100%;
     height: 525px;
-    width: 400px;
     border-radius: 4px;
     background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(17,17,17,0.6) 100%), url('/static/images/in_sunwoo.jpg');
     background-size: cover;
@@ -531,28 +534,127 @@
     cursor: pointer;
 }
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 768px) {
     .services {
-        height: 1600px;
+        height: auto;
+        min-height: 100vh;
+        padding: 2rem 0;
     }
 
     .services h1 {
         font-size: 2rem; 
         margin-top: 2rem;
     }
+
+    .services__container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 0 1rem;
+    }
+
+    .services__card {
+        height: 460px;
+    }
+
+    .services h2 {
+        top: 250px;
+        left: 25px;
+        font-size: 1.8rem;
+    }
+
+    .services__card button {
+        top: 300px;
+        left: 25px;
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+
+    .services__card p:nth-of-type(1) {
+        top: 340px;
+        left: 25px;
+        font-size: 0.9rem;
+    }
+
+    .services__card p:nth-of-type(2) {
+        top: 365px;
+        left: 25px;
+        font-size: 0.9rem;
+    }
+
+    .services__card p:nth-of-type(3) {
+        top: 390px;
+        left: 25px;
+        font-size: 0.9rem;
+    }
+
+    .services__card .linkedin-container {
+        top: 420px;
+        left: 25px;
+    }
+
+    .services__card .linkedin-link {
+        font-size: 1.3rem;
+    }
 }
 
 @media screen and (max-width: 480px) {
     .services {
-        height: 1400px;
+        height: auto;
+        min-height: 100vh;
+        padding: 1rem 0;
     }
 
     .services h1 {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
+    }
+
+    .services__container {
+        gap: 1rem;
+        padding: 0 0.5rem;
     }
 
     .services__card {
-        width: 300px;
+        height: 400px;
+    }
+
+    .services h2 {
+        top: 220px;
+        left: 20px;
+        font-size: 1.5rem;
+    }
+
+    .services__card button {
+        top: 260px;
+        left: 20px;
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+
+    .services__card p:nth-of-type(1) {
+        top: 295px;
+        left: 20px;
+        font-size: 0.8rem;
+    }
+
+    .services__card p:nth-of-type(2) {
+        top: 315px;
+        left: 20px;
+        font-size: 0.8rem;
+    }
+
+    .services__card p:nth-of-type(3) {
+        top: 335px;
+        left: 20px;
+        font-size: 0.8rem;
+    }
+
+    .services__card .linkedin-container {
+        top: 360px;
+        left: 20px;
+    }
+
+    .services__card .linkedin-link {
+        font-size: 1.1rem;
     }
 }
 
