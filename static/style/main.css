@@ -202,7 +202,7 @@
 /* hero section CSS */
 
 .main {
-    background-color: #e8e8e8;
+    background: transparent;
 }
 
 .main__container {
@@ -212,18 +212,55 @@
     justify-items: center;
     text-align: center;
     justify-self: center;
-    margin: 0 auto;
-    height: 90vh;
-    background-color: #e8e8e8;
+    margin: 0;
+    height: 75vh;
     z-index: 1;
-    width: 100%;
-    max-width: 1300px;
+    width: 100vw;
     padding: 0 50px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Crossfade layers for hero background (keeps gradient constant) */
+.main__container::before,
+.main__container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    z-index: 0;
+}
+
+/* Default visible layer */
+.main__container::before {
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.7) 100%), var(--bg-image-1, url('/static/images/mtl_1.jpg'));
+    opacity: 1;
+}
+
+/* Alternate layer */
+.main__container::after {
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.7) 100%), var(--bg-image-2, url('/static/images/mtl_2.jpg'));
+}
+
+/* When toggled, fade to the alternate layer */
+.main__container.show-alt::before { opacity: 0; }
+.main__container.show-alt::after  { opacity: 1; }
+
+/* Ensure text/content stays above fading layers */
+.main__content {
+    position: relative;
+    z-index: 1;
 }
 
 .main__content h1 {
-    font-size: 4rem;
-    background-color: #91d5c1;
+    font-size: 3.5rem;
     background-image: linear-gradient(to top, #91d5c1 0%, #a8e0d0 100%);
     background-size: 100%;
     background-clip: text;
@@ -234,8 +271,7 @@
 }
 
 .main__content h2 {
-    font-size: 3rem;
-    background-color: #a8e0d0;
+    font-size: 2.5rem;
     background-image: linear-gradient(to top, #a8e0d0 0%, #b8e8d8 100%);
     background-size: 100%;
     background-clip: text;
@@ -246,7 +282,7 @@
 }
 
 .main__content p {
-    margin-top: 1rem; 
+    margin-top: 0.5rem; 
     font-size: 2rem;
     font-weight: 700;
     color: #000
@@ -297,8 +333,6 @@
 
 
 
-
-
 @media screen and (max-width: 768px) {
     .main__container {
         display: grid;
@@ -321,7 +355,8 @@
     }
 
     .main__content h2 {
-        font-size: 3rem;
+        font-size: 2rem;
+        margin-top: 1rem;
     }
 
     .main__content p {
@@ -381,7 +416,7 @@
     flex-direction: column;
     justify-content: center;
     padding: 3rem 2rem;
-    background: #0f3d2e;
+    background: #91d5c1;
 }
 
 .services__right h1,
@@ -389,14 +424,14 @@
     color: #ffffff;
     font-family: 'Tenorite', sans-serif;
     font-weight: 600;
-    font-size: 1.2rem;
+    font-size: 1.0rem;
 }
 
 
 .services h1 {
     color: #087d3d;
     text-align: left;
-    font-size: 3rem;
+    font-size: 2.5rem;
     margin: 0 0 1rem 0;
     opacity: 0;
     transform: translateY(20px);
@@ -605,9 +640,6 @@
         flex-direction: column;
     }
 }
-
-
-
 
 
 /* DNA section */
@@ -891,6 +923,7 @@
     gap: 1.5rem;
     width: 100%;
     max-width: 720px;
+    margin: 0 auto;
 }
 
 .dna__left .services__info-box {

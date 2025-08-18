@@ -7,6 +7,50 @@ menu.addEventListener('click', function() {
 })
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Hero section slideshow (crossfade between layered backgrounds)
+  const mainContainer = document.querySelector('.main__container');
+  if (mainContainer) {
+    const images = [
+      '/static/images/mtl_1.jpg',
+      '/static/images/mtl_2.jpg',
+      '/static/images/mtl_3.jpg',
+      '/static/images/mtl_4.jpg'
+    ];
+
+    // Preload images
+    images.forEach((src) => { const img = new Image(); img.src = src; });
+
+    let currentIndex = 0;     // index of the image currently visible
+    let showingAlt = false;   // whether ::after layer is the visible one
+
+    // Initialize both layers
+    mainContainer.style.setProperty('--bg-image-1', `url('${images[0]}')`);
+    mainContainer.style.setProperty('--bg-image-2', `url('${images[1]}')`);
+
+    function crossfade() {
+      // Toggle which layer is visible (CSS handles the fade)
+      showingAlt = !showingAlt;
+      mainContainer.classList.toggle('show-alt', showingAlt);
+
+      // After fade completes, advance index and prepare the hidden layer
+      setTimeout(() => {
+        currentIndex = (currentIndex + 1) % images.length; // now-visible image index
+        const nextIndex = (currentIndex + 1) % images.length; // image to load next into hidden layer
+        const nextUrl = `url('${images[nextIndex]}')`;
+        if (showingAlt) {
+          // ::after is visible → update ::before (hidden) for next cycle
+          mainContainer.style.setProperty('--bg-image-1', nextUrl);
+        } else {
+          // ::before is visible → update ::after (hidden) for next cycle
+          mainContainer.style.setProperty('--bg-image-2', nextUrl);
+        }
+      }, 1000); // match CSS transition duration
+    }
+
+    // Change image every 3 seconds
+    setInterval(crossfade, 3000);
+  }
+
   const boxes = document.querySelectorAll('.services__info-box');
   const heading = document.querySelector('.services h1');
   const paragraph = document.querySelector('.services p');
