@@ -495,7 +495,7 @@
 
 .services__info-box {
   position: relative;  /* needed for absolute positioning of hover text */
-  background-color: #2ab167;
+  background-color: #464646;
   color: white;
   width: 180px;
   height: 120px;
@@ -505,7 +505,7 @@
   align-items: center;
   font-size: 1.25rem;
   font-weight: 600;
-  box-shadow: 0 4px 8px rgba(42, 177, 109, 0.3);
+  box-shadow: 0 4px 8px rgba(145, 213, 193, 0.3);
   cursor: default;
   user-select: none;
   transition: transform 0.2s ease;
@@ -522,7 +522,7 @@
 
 .services__info-box:hover {
   transform: scale(1.05);
-  box-shadow: 0 6px 12px rgba(42, 177, 109, 0.5);
+  box-shadow: 0 6px 12px rgba(145, 213, 193, 0.5);
 }
 
 /* Hover text container */
@@ -532,8 +532,8 @@
   left: 0;
   width: 100%;
   height: 100%;
-    background: rgba(255, 255, 255);
-  color: #2ab169;
+  background: rgba(255, 255, 255, 0.9);
+  color: #464646;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -681,7 +681,7 @@
     align-items: center;
     justify-content: flex-start;
     padding: 3rem 2rem;
-    background-color: #91d5c1;
+    background-color: #464646;
 }
 
 .mandats__middle {
@@ -713,7 +713,7 @@
 }
 
 .mandats__left h3 {
-    color: #1e3a5f;
+    color: #91d5c1;
 }
 
 .mandats__middle h3 {
@@ -769,7 +769,7 @@
 /* Left section info blocks (sell-side) */
 .mandats__left .mandats__info-box {
     background-color: #ffffff;
-    color: #1e3a5f;
+    color: #91d5c1;
 }
 
 /* Middle section info blocks (buy-side) */
